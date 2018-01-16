@@ -314,11 +314,18 @@ function checkArr(el) {
   return el !== 0;
 }
 console.log('3.check array on 0= SOME ', ![1,2,3,0,5,8,9,10,24,56].some((el) => !el))
+console.log('3.check array on 0= EVERY ', [1,2,3,0,5,8,9,10,24,56].every((el) => !el))
+
+
+
 // check array on wordLength
 console.log('4.check array on wordLength=', ['yes', 'no', 'hello', 'javascript'].some(wordLength))
 function wordLength(el) {
   return el.length > 4
 }
+
+
+
 // string from array
 var strObj = [
 	{char: 'a', index: 12},
@@ -347,6 +354,16 @@ function stringToArray(arr) {
 	},'')
 	return res
 }
+console.log('5.string from array=', stringToArray2(strObj))
+function stringToArray2(arr) {
+	var a = [];
+  strObj.forEach(obj => (a[obj.index] = obj.char));
+  return a.join('');
+}
+
+
+
+
 var people = [
   {
     _id: "5a577211db0e4a6e89c71dff",
@@ -726,3 +743,27 @@ function sortPeople(peop) {
 	return [{'people check yong': peopYoung},{'people check old': peopOld},{'other people': peopOther}]
 }
 console.log(sortPeople(people))
+
+
+const statusArray = ['some', 'apple', 'green', 'white'];
+
+// 04. some
+function checkStatus(status) {
+  return statusArray.some(el => status.indexOf(el) > -1);
+}
+
+function sortPeople2(people) {
+  let good = []
+  let old = []
+  let other = []
+
+  people.forEach((el) => {
+    if (checkStatus(el.status)) {
+      el.age < 35 ? good.push(el) : old.push(el)
+    } else {
+      other.push(el);
+    }
+  })
+  return [good, old, other];  
+}
+console.log(sortPeople2(people));
