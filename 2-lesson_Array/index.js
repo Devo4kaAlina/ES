@@ -1,5 +1,7 @@
 ///////////////////----------- PART1 --------------//////////
 console.log('///////////////////----------- PART1 --------------//////////')
+
+
 // double array
 function doubleArr(arr) {
 	let newArray = []
@@ -9,13 +11,28 @@ function doubleArr(arr) {
 	return arr.concat(newArray)
 }
 console.log('double array =', doubleArr([1,2,3]))
+
+console.log('=====================================')
+console.log('без создания нового массива -- ', (function (array) {
+  return array.concat(array)
+})([1,2,3]))
+console.log('=====================================')
 // double array
+
+
+
 // get last elem
 function getLast(arr) {
 	return arr[arr.length - 1]
 }
 console.log('get last elem =', getLast([1,2,3,4,5]))
+console.log('=====================================')
+console.log('методом .pop() -- ', (function (array) { return array.pop()})([1,2,3,4,5]))
+console.log('=====================================')
 // get last elem
+
+
+
 // create Array
 function createArr(n) {
 	let arr = []
@@ -28,6 +45,9 @@ function createArr(n) {
 }
 console.log('create Array =', createArr(15))
 // create Array
+
+
+
 // change array
 function changeArrays() {
 	var args = Array.prototype.slice.call(arguments)
@@ -56,7 +76,27 @@ function sortReverseStr(str) {
 	return arrStr.join('')
 }
 console.log('1.sort and reverse string =', sortReverseStr('qwertyuiopasdfghjklzxcvbnm'))
+console.log('====================================')
+console.log('не переберая строку и не пушай в новый массив -- ', 
+'qwertyuiopasdfghjklzxcvbnm'
+  .split('')
+  .sort(function(a,b) {
+		if (a < b) return -1;
+		if (a > b) return 1
+  })
+  .reverse()
+  .join(''))
+/**
+ * каждый из примененных методов,
+ * кроме .join() возвращает тебе массив, 
+ * с которым ты дальше можешь работать 
+ * и применять к нему методы, создавай цепь
+ */
+console.log('====================================')
 // sort and reverse string
+
+
+
 // sort array
 function sortArray(arr) {
 	arr.sort(function(a,b) {
@@ -66,6 +106,9 @@ function sortArray(arr) {
 }
 console.log('2.sort array =', sortArray([2,56,-4,-105,7,9531,5,-100,-1]))
 // sort array
+
+
+
 // get new array
 function getNewArray(arr, start, end) {
 	let newArr = []
@@ -74,12 +117,18 @@ function getNewArray(arr, start, end) {
 }
 console.log('3.get new array =', getNewArray(['a','b','c','d','e','f'], 1, 3))
 // get new array
+
+
+
 // double array
 function doubleArray(arr) {
 	return arr.concat(arr)
 }
 console.log('4.double array =', doubleArray(['a','b']))
 // double array
+
+
+
 //remove element
 function remEl(arr, start, col) {
 	arr.splice(2,2)
@@ -87,6 +136,9 @@ function remEl(arr, start, col) {
 }
 console.log('5.remove 2,3 element =', remEl([1,2,3,4,5], 2,2))
 //remove element
+
+
+
 //remove element and replace
 function remElRep(arr, start, col) {
 	arr.splice(2,2,'three','four')
@@ -94,6 +146,9 @@ function remElRep(arr, start, col) {
 }
 console.log('6.remove element and replace =', remElRep([1,2,3,4,5], 2,2))
 //remove element and replace
+
+
+
 //add in array
 function addInArray(arr, whrehe, what) {
 	arr.splice(whrehe,0,what)
@@ -101,6 +156,9 @@ function addInArray(arr, whrehe, what) {
 }
 console.log('7.add in array =', addInArray([1,2,3,4,5], 2, 'test'))
 //add in array
+
+
+
 //sort arrays
 function sortArrays(arrays) {
 	arrays.sort(function(arr,arr2){
@@ -109,13 +167,26 @@ function sortArrays(arrays) {
 	return arrays
 }
 console.log('8.sort arrays for length=', sortArrays([[1,2,3,4,5],[2],['s','b','s']]))
+/**
+ * давай будем учиться давать функциям более осмысленные названия
+ * тебе здесь нужно отсортировать массивы по их длинне
+ * "sortArrays" - уже неплохое начало, можно было бы добавить еще название параметра,
+ * по которому сортируешь
+ * например: sortArraysByLength 
+ */
 //sort arrays
+
+
+
 //copy array
 function copyArray(array) {
 	return array.concat(array)
 }
 console.log('9.copy array=', copyArray([1,2,3,4,5]))
 //copy array
+
+
+
 //sort array obj
 function sortArrayObj(obj) {
 	obj.sort(objSort)
@@ -164,6 +235,9 @@ const arrObj = [
 ]
 console.log('10.sort array obj=', sortArrayObj(arrObj))
 //sort array obj
+
+
+
 // filter product
 const products = [
 	{title: 'prod1', price: 15},
@@ -177,6 +251,7 @@ const products = [
 	{title: 'prod9', price: 315},
 	{title: 'prod10', price: 855},
 ]
+
 function filterProducts(products, from, to) {
 	newProdList = []
 	products.sort(function(a,b){
@@ -191,6 +266,9 @@ function filterProducts(products, from, to) {
 }
 console.log('11.filter product=', filterProducts(products, 400, 1000))
 // filter product
+
+
+
 ///////////////////----------- PART3 --------------//////////
 console.log('///////////////////----------- PART3 --------------//////////')
 // filter product
@@ -205,12 +283,28 @@ function filterProd(products, from, to) {
 	let newProd = products.filter(filter)
 	return newProd
 }
+/**
+ * function filterProd(products, from, to) {
+      products.sort(function(a,b){
+        return a.price - b.price
+      })
+      let newProd = products.filter((e) => filter(e, from, to))
+      return newProd
+    }
+    function filter(element, from, to) {
+        return (element.price > from && element.price < to)
+    }
+ */
+
+
+
+
 // transform array
 console.log('2.transform array=', transformArr([1,2,3,5,8,9,10,24,56]))
 function transformArr(arr) {
 	let newArr = []
 	arr.map(function(el){
-		return newArr.push({digit: el, odd: el % 2 === 0 ? "true" : "false"})
+		return newArr.push({digit: el, odd: el % 2 === 0})
 	})
 	return newArr
 }
@@ -219,6 +313,7 @@ console.log('3.check array on 0=', [1,2,3,0,5,8,9,10,24,56].every(checkArr))
 function checkArr(el) {
   return el !== 0;
 }
+console.log('3.check array on 0= SOME ', ![1,2,3,0,5,8,9,10,24,56].some((el) => !el))
 // check array on wordLength
 console.log('4.check array on wordLength=', ['yes', 'no', 'hello', 'javascript'].some(wordLength))
 function wordLength(el) {
