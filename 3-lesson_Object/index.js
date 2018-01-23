@@ -2,6 +2,7 @@
 //                Part 1
 // =====================================================
 
+
 var object = {
   name: "Вася",
   age: 25,
@@ -163,4 +164,3 @@ console.log('setPropertiesObject', setPropertiesObject(objectPrice,['writable','
 objectPrice.count = 555;
 objectPrice.price = 555;
 console.log('objectPrice.count=', objectPrice.count, 'objectPrice.price=', objectPrice.price)
-
