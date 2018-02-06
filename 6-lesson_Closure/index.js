@@ -1,6 +1,8 @@
 /**
  * №1
  */
+var username;
+
  console.log(getBidName(username), username) // undefined  - Потому что username еще не определено
 
 function getBidName(name) {
@@ -8,7 +10,7 @@ function getBidName(name) {
  	return name.toUpperCase()
 }
 
-var username = 'Ivan';
+username = 'Ivan';
 
 
 
@@ -72,7 +74,7 @@ console.log(getDollar())
  	var text = "World";
  	console.log(greet + text) // HelloWorld
  })()
- // console.log(greet + text)  ошибка, text не найдено. Т.к переменная объявлена в замкнутом контуре
+ // console.log(greet + text)  // ошибка, text не найдено. Т.к переменная объявлена в замкнутом контуре
 
 
  /**
@@ -84,7 +86,15 @@ console.log(getDollar())
  }
  console.log(minus(10,6))
  console.log(minus(10,5))
-
+function Minus (number) {
+	var number = number || 0;
+	return function (secondNumber) {
+		number = number - secondNumber;
+		return number;
+	}
+}
+console.log('>>>>>>>>> ', Minus(10)(5))
+console.log('>>>>>>>>> ', Minus()(5))
 
 
 /**
@@ -92,7 +102,7 @@ console.log(getDollar())
  */
 
 function multiplyMarker(numb) {
-	var numb;
+	// var numb;
 	return function (b) {
 		numb = numb*b
 		return numb
@@ -104,15 +114,16 @@ const multiply = multiplyMarker(2);
  console.log('multiplyMarker= ', multiply(1))
  console.log('multiplyMarker= ', multiply(3))
  console.log('multiplyMarker= ', multiply(10))
+ // console.log('multiplyMarker= ', multiplyMarker(2)(10))
 
  /**
  * №5
  */
 
  const module = (function(){
- 	var str = 0;
+ 	var str = '';
  	function setStr(value) {
- 		str = value
+ 		str = value || '';
  	}
  	function getStr() {
  		return str
@@ -131,7 +142,7 @@ const multiply = multiplyMarker(2);
  	}
  })();
 
-module.setStr('abcde')
+module.setStr('hghjg')
 console.log('getStr', module.getStr())
 console.log('getLengthStr', module.getLengthStr())
 console.log('revertStr', module.revertStr())
