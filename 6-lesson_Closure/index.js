@@ -35,12 +35,13 @@ console.log(test()) // IVAN - функция getBigName принимает пе�
  var food = 'cucumber';
  (function(){
  	var food = 'bread';
- 	getFood();  // cucumber - переменная food определена глобально
+ 	getFood(); 
  })();
 
 function getFood() {
 	console.log(food)
 }
+// cucumber - переменная food определена глобально. Функция создает свое заьыкание , которое обращается в данном случае к виндов
 
 /**
  * ЧАТЬ 2
@@ -61,7 +62,7 @@ var dollar, getDollar;
 dollar = 30;
 
 console.log(getDollar()) 
-// 0 - у нас замкнутая функция со своими переменными, т.е. при объявлении функции мы в том же месте передали переменную dollar
+// 0 - у нас замкнутая функция со своими переменными, т.е. при объявлении функции мы создали новое окружение, у которого родитель самовызывающая функция, в которой долллар переменная определена мы в том же месте передали переменную dollar
 
 
 /**
@@ -79,11 +80,16 @@ console.log(getDollar())
  * №3
  */
 
- var minus = function  (a,b) {
- 	return a - b
- }
- console.log(minus(10,6))
- console.log(minus(10,5))
+ function ьштгы(numb) {
+	var numb = numb || 0;
+	return function (secondNumb) {
+		numb = numb-secondNumb
+		return numb
+	} 
+}
+
+ console.log(minus(10)(6))
+ console.log(minus(10)(5))
 
 
 
@@ -98,9 +104,9 @@ function multiplyMarker(numb) {
 		return numb
 	} 
 }
-const multiply = multiplyMarker(2);
+const multiply = multiplyMarker(2); // создали переменную, в которой содердится код внутренний функции, и определили numb
 
- console.log('multiplyMarker= ', multiply(2))
+ console.log('multiplyMarker= ', multiply(2)) 
  console.log('multiplyMarker= ', multiply(1))
  console.log('multiplyMarker= ', multiply(3))
  console.log('multiplyMarker= ', multiply(10))
@@ -110,9 +116,9 @@ const multiply = multiplyMarker(2);
  */
 
  const module = (function(){
- 	var str = 0;
+ 	var str = '';
  	function setStr(value) {
- 		str = value
+ 		str = value || ''
  	}
  	function getStr() {
  		return str
@@ -144,7 +150,7 @@ console.log('revertStr', module.revertStr())
  const calculator = (function(){
  	var def = 0;
  	function setCalc(a) {
- 		def = a
+ 		def = a || 0
  		return this
  	}
  	function getCalc() {
@@ -170,6 +176,8 @@ console.log('revertStr', module.revertStr())
  		powCalc: powCalc
  	}
  })();
+// создали переменную calculator которая содержит результат вызова самовызывающей функции, которая в данном случае возвращает объект методов. 
+// их мы и можем исрользовать в дальнейшем
 
 calculator.setCalc(10)
 console.log('plusCalc', calculator.plusCalc(5))
