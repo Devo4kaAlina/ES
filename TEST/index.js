@@ -47,3 +47,10 @@
 * нужно чтобы в консоли вывелось 0, 1 и до указаного числа
 * подсказка --- замыкание
 */
+
+let button1 = new module.CreateTrafficLightButton('button1', 'yellow')
+button1.init()
+let button2 = new module.CreateTrafficLightButton('button2')
+button2.init()
+
+module.timeOutCircle(5)
