@@ -46,3 +46,4 @@ console.log('newBuid.getFloor = ', newBuid.getFloor())
 
 var home1 = new home(5);
 console.log('home1.getFloor() = ', home1.getFloor())
+
