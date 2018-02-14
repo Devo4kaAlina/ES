@@ -8,10 +8,11 @@ function planet(name) {
 	}
 }
 
-function PlanetWithSatellite (satellite) {
-	planet.call(this);
+function PlanetWithSatellite (satellite, name) {
+	planet.call(this, name);
+	this.satellite = satellite;
 	this.getName = function() {
-		return 'Planet name is' + this.name + '.The satellite is' + this.satellite 
+		return 'Planet name is ' + this.name + '.The satellite is ' + this.satellite 
 	}
 }
 let earth = new PlanetWithSatellite('earth', 'moon');
@@ -32,10 +33,12 @@ function building(name, floor) {
 	};
 }
 
-function home(room) {
-	building.call(this);
+function home(name,floor,room) {
+	building.apply(this,[name, floor]);
 	this.allRooms = room;
+	var res = this.getFloor;
 	this.getFloor = function() {
+		console.log(res.call(this))
 		return {floor: this.floor, rooms: this.floor*this.allRooms}
 	}
 }
@@ -44,6 +47,6 @@ console.log('newBuid.getFloor = ', newBuid.getFloor())
 newBuid.setFloor(9);
 console.log('newBuid.getFloor = ', newBuid.getFloor())
 
-var home1 = new home(5);
+var home1 = new home("home name", 5, 5);
 console.log('home1.getFloor() = ', home1.getFloor())
 

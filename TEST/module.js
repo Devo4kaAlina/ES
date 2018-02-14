@@ -14,7 +14,7 @@ let module = (function(){
 		}
 		function countFunc () {
 			couter++;
-			console.log(couter, arrColor[currentColor++])
+			console.log(couter, currentColor < arrColor.length ? arrColor[currentColor++] : (currentColor = 0, arrColor[currentColor++]))
 		}
 
 		function init () {
@@ -35,14 +35,19 @@ let module = (function(){
 			destroy
 		}
 	}
+	
 	function timeOutCircle (numb) {
 		for (var i = 0; i < numb; i++) {
-			let b = i
-			setTimeout(function() {
-				console.log(b)
-			},1000)
+			(function(i) {
+				setTimeout(function() {
+					console.log(i);
+				}, 1000);
+			})(i);
 		}
 	} 
+	return { CreateTrafficLightButton, timeOutCircle };
+})()
+	
 /*
 let module = (function() {
 
