@@ -50,6 +50,7 @@
 
 let button1 = new module.CreateTrafficLightButton('button1', 'yellow')
 button1.init()
+console.log(button1)
 let button2 = new module.CreateTrafficLightButton('button2')
 button2.init()
 
