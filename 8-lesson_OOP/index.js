@@ -38,7 +38,7 @@ function home(name,floor,room) {
 	this.allRooms = room;
 	var res = this.getFloor;
 	this.getFloor = function() {
-		res.call(this)
+		console.log(res.call(this))
 		return {floor: this.floor, rooms: this.floor*this.allRooms}
 	}
 }
