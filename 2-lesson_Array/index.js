@@ -1,3 +1,4 @@
+//Write function which create double array.
 var arr1 = [1, 2, 3];
 
 function doubleArray(arr1) {
@@ -10,6 +11,7 @@ function doubleArray(arr1) {
 }
 console.log(doubleArray(arr1));
 //------------------------------------------------------------------------------
+//Write function wich get last element of array
 var arr = [1, 4, 6, 7, 8, 4];
 
 function getLastElememt(arr) {
@@ -17,6 +19,7 @@ function getLastElememt(arr) {
 }
 console.log(getLastElememt(arr));
 //------------------------------------------------------------------------------
+//Write function which fill array from 0 to num
 function createArr(num) {
   var arr = [];
   for (var i = 0; i < num + 1; i++) {
@@ -26,12 +29,14 @@ function createArr(num) {
 }
 console.log(createArr(10));
 //------------------------------------------------------------------------------
+//Write function which delete first element from quanty arrays
 // function deleteFirstIndex(arr,arr1) {
 //   arr.shift();
 //   return arr;
 // }
 // console.log(deleteFirstIndex([1, 'b', 6], [1,5,7]));
 //------------------------------------------------------------------------------
+//Write function which sort string in descending order
 var str = 'bcdaeflmjgkhi';
 
 function sortAlphabet(str) {
@@ -43,6 +48,7 @@ function sortAlphabet(str) {
 
 console.log(sortAlphabet(str));
 //------------------------------------------------------------------------------
+//Write function which sort array in descending order
 var arr = [2, 4, 7, 1, -2, 10, -9];
 
 function descendingOrderSort(arr) {
@@ -52,6 +58,7 @@ function descendingOrderSort(arr) {
 }
 console.log(descendingOrderSort(arr));
 //------------------------------------------------------------------------------
+//Write function which delete certein elements
 var arr = ['a', 'b', 'd', 'e', 'f'];
 
 function getNewArray(arr, start, end) {
@@ -60,6 +67,7 @@ function getNewArray(arr, start, end) {
 
 console.log(getNewArray(arr, 1, 4));
 //------------------------------------------------------------------------------
+//Write function which create double array.
 var arr1 = ['one', 2, 'three', 4];
 
 function plusArray(arr1) {
@@ -112,11 +120,21 @@ function makeCopyArray(arr) {
 
 console.log(makeCopyArray(arr));
 //------------------------------------------------------------------------------
-
-
-
-
-
+// var arr = [
+//   {title: 'intel', info:{cores:2, cache:3}},
+// 	{title: 'intel', info:{cores:1, cache:1}},
+// 	{title: 'amd', info:{cores:4, cache:2}},
+// 	{title: 'amd', info:{cores:6, cache:8}},
+// ];
+//
+// function sortByCores(arr) {
+//   arr.sort(function(a, b) {
+//     return a.info.cores - b.info.cores;
+// });
+// return arr;
+// }
+//
+// console.log(sortByCores(arr));
 
 
 
