@@ -55,8 +55,30 @@ console.log(descendingOrderSort(arr));
 var arr = ['a', 'b', 'd', 'e', 'f'];
 
 function getNewArray(arr, start, end) {
-
+  return arr.slice(start, end);
 }
+
+console.log(getNewArray(arr, 1, 4));
+//------------------------------------------------------------------------------
+var arr1 = ['one', 2, 'three', 4];
+
+function plusArray(arr1) {
+  var arr2 = arr1;
+  return arr2.concat(arr1);
+}
+
+console.log(plusArray(arr1));
+//------------------------------------------------------------------------------
+// Exercise 5,6 together
+var arr = [1, 2, 3, 4, 5];
+
+function deleteIndex(arr) {
+  arr.splice(2, 2, 'three', 'four');
+  return arr;
+}
+
+console.log(deleteIndex(arr));
+//------------------------------------------------------------------------------
 
 
 
