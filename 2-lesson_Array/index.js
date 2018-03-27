@@ -13,7 +13,7 @@ console.log(doubleArray(arr1));
 var arr = [1, 4, 6, 7, 8, 4];
 
 function getLastElememt(arr) {
-  return arr[arr.length - 1]
+  return arr[arr.length - 1];
 }
 console.log(getLastElememt(arr));
 //------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ var str = 'bcdaeflmjgkhi';
 function sortAlphabet(str) {
   var strArr = str.split('');
   strArr = strArr.sort();
-  strArr = strArr.reverse();
+  trArr = strArr.reverse();
   return strArr.join('');
 }
 
@@ -79,8 +79,39 @@ function deleteIndex(arr) {
 
 console.log(deleteIndex(arr));
 //------------------------------------------------------------------------------
+var arr = ['i', 'am', 'an', 'array'];
 
+function addElement(arr) {
+  arr.splice(3, 0, "awsome");
+  return arr;
+}
 
+console.log(addElement(arr));
+//------------------------------------------------------------------------------
+var arr = [
+  [14, 45],
+  [2, 'a', 'sort'],
+  ['something']
+];
+
+function sortArraysLenght(array) {
+  array.sort(function(a, b) {
+    return a.length - b.length;
+  })
+  return arr;
+}
+
+console.log(sortArraysLenght(arr));
+//------------------------------------------------------------------------------
+
+var arr = [1,'two', 17, -1, 'js'];
+
+function makeCopyArray(arr) {
+   return arr.slice(0, arr.length);
+}
+
+console.log(makeCopyArray(arr));
+//------------------------------------------------------------------------------
 
 
 
