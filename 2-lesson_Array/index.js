@@ -114,11 +114,15 @@ console.log(sortArraysLenght(arr));
 
 var arr = [1,'two', 17, -1, 'js'];
 
-function makeCopyArray(arr) {
+function makeCopyArraySlice(arr) {
    return arr.slice(0, arr.length);
 }
+console.log(makeCopyArraySlice(arr));
 
-console.log(makeCopyArray(arr));
+function makeCopyArrayConcat(arr) {
+  return arr.concat()
+}
+
 //------------------------------------------------------------------------------
 // var arr = [
 //   {title: 'intel', info:{cores:2, cache:3}},
