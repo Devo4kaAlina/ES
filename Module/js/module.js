@@ -1,7 +1,7 @@
 function ConstructorUser (users) {
 	var userArray = this.users = users;
 	this.getLengthArray = function() {
-		return Object.keys(userArray).length
+		return userArray && Object.keys(userArray).length
 	}
 	this.getElementForIndex = function(index) {
 		return userArray[index - 1]
@@ -13,43 +13,35 @@ function ConstructorUser (users) {
 		})
 	}
 	function filterArray(newArr, arg1, arg2) {
-		return newArr = userArray.filter(function(elem){
+		return newArr.filter(function(elem){
 			return elem[arg1] == arg2
 		})
 	}
 	function checkArguments(arg, filterBy) {
 		return arg.every(function(el) { return typeof el === filterBy})
 	}
+	function sortArray(arr, arg) {
+		return arr.sort(function(a, b){
+			return (a[arg] < b[arg]) ? -1 : 1
+		})
+	}
 	this.filterBy = function() {
 		var args = [];
 		for (var i = 0; i < arguments.length; i++) {
 		  args[i] = arguments[i];
 		}
-		if (args.length === 2 && checkArguments(args, 'string')) {
+		if (args && args.length === 2 && checkArguments(args, 'string')) {
+			var arg1 = args[0],
+			 	arg2 = args[1];
+		 	return filterArray(userArray, arg1, arg2)
+		}
+		if (args && args.length === 3 && checkArguments(args, 'string')) {
 			var arg1 = args[0],
 			 	arg2 = args[1],
-			 	newArr = [];
-		 	// filterArray(arg1, arg2)
-			newArr = userArray.filter(function(elem){
-				return elem[arg1] == arg2
-			})
-			return newArr
+			 	arg3 = args[2];
+			return sortArray(filterArray(userArray, arg1, arg2), arg3)
 		}
-		if (args.length === 3 && checkArguments(args, 'string')) {
-			var arg1 = args[0],
-			 	arg2 = args[1],
-			 	arg3 = args[2],
-			 	newArr = [];
-		 	// filterArray(arg1, arg2)
-			newArr = userArray.filter(function(elem){
-				return elem[arg1] == arg2
-			})
-			newArr.sort(function(a, b){
-				return (a[arg3] < b[arg3]) ? -1 : 1
-			})
-			return newArr
-		}
-		if (args.length === 1 && checkArguments(args[0], 'object')) {
+		if (args.length && checkArguments(args, 'object')) {
 			var newArr = userArray,
 				newArr2 = [];
 			args[0].forEach(function(item) {
@@ -62,7 +54,7 @@ function ConstructorUser (users) {
 			})
 			return newArr2
 		}
-		if (args.length && checkArguments(args[0], 'object') && typeof args[1] === 'string') {
+		if (args.length === 2 && typeof args[0] === 'object' && typeof args[1] === 'string') {
 			var newArr = userArray,
 				newArr2 = [],
 				arg3 = args[1];
@@ -74,10 +66,7 @@ function ConstructorUser (users) {
 				}
 				newArr = newArr2
 			})
-			newArr2.sort(function(a, b){
-				return (a[arg3] < b[arg3]) ? -1 : 1
-			})
-			return newArr2
+			return sortArray(newArr2, arg3)
 		}
 	}
 	this.findByValue = function () {
@@ -86,9 +75,8 @@ function ConstructorUser (users) {
 				throw new Error('The search string should have at least two characters')
 			} else {
 				var arg1 = arguments[0],
-			 	arg2 = arguments[1],
-			 	newArr = [];
-			 	// filterArray(arg1, arg2)
+				 	arg2 = arguments[1],
+				 	newArr = [];
 				newArr = userArray.filter(function(elem){
 					return elem[arg1] && elem[arg1].search(arg2) > -1 ? elem[arg1] : ''
 				})
@@ -107,4 +95,7 @@ ConstructorUser.checkFieldInCollection = function (arr, str) {
 		isTrue = Object.keys(item).some(function(el) { return el == str })
 	})
 	return isTrue
+}
+ConstructorUser.getCreator = function (arr) {
+	return arr instanceof this
 }
