@@ -42,7 +42,7 @@ console.log(createArr(10));
 // }
 // v2
 //function deleteFirstIndex() {
-//    Array.prototype.forEach.call(arguments, arr => arr.shift()); 
+//    Array.prototype.forEach.call(arguments, arr => arr.shift());
 //    return arguments;
 //}
 //------------------------------------------------------------------------------
@@ -164,4 +164,4 @@ return arr;
 }
 
 console.log(sortByCores(arr));
-
+//
