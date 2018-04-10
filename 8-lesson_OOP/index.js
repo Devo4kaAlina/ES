@@ -255,5 +255,3 @@ NewModule.prototype.setGlobalName = function (prefix) {
 var mod = new NewModule('tratata');
 console.log(mod.getPrettyName())
 mod.setGlobalName('prefix')
-var home1 = new home(5);
-console.log('home1.getFloor() = ', home1.getFloor())
