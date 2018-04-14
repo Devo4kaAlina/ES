@@ -65,7 +65,7 @@ function arrayClone(array) {
 console.log(arrayClone(array));
 //------------------------------------------------------------------------------
 
-function multiFunction(){
+function processSrting(){
 
 }
 
