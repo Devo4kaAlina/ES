@@ -17,7 +17,7 @@ var obj = {
   name: "Jhon",
   age: 20,
   boolean: true
-}
+};
 
 function checkKeys(obj) {
   for (var prop in obj) {
@@ -33,12 +33,12 @@ var obj = {
   age: 49,
   boolean: false,
   lastname: 'Jhoel'
-}
+};
 
 function keysNumbers(obj) {
   var counter = 0;
   for (var prop in obj) {
-    counter++
+    counter++;
   }
   return counter;
 }
@@ -46,15 +46,36 @@ function keysNumbers(obj) {
 console.log(keysNumbers(obj));
 //------------------------------------------------------------------------------
 //4. Write function which return deep clone array
-var array = [1, 2, 'three', {
-  price: 28
-}, {
-  display: 'block',
-  color: 'red'
-}];
+let array = [1, 2, 'three', {
+    price: 28
+  }, {
+    display: 'block',
+    color: 'red'
+  }],
+  clonearr = {};
 
 function arrayClone(array) {
+  for (var key in array) {
+    clonearr[key] = array[key];
+
+  }
+  return clonearr;
 }
+
+console.log(arrayClone(array));
+//------------------------------------------------------------------------------
+
+function multiFunction(){
+
+}
+
+
+
+
+
+
+
+
 
 
 
