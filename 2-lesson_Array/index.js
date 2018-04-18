@@ -45,46 +45,6 @@ var arr = [1, 4, 6, 7, 8, 4];
     trArr = strArr.reverse();
     return strArr.join('');
   }
-<<<<<<< HEAD
-=======
-  return arr;
-}
-console.log(createArr(10));
-//------------------------------------------------------------------------------
-//Write function which delete first element from quanty arrays
-// function deleteFirstIndex(arr,arr1) {
-//   arr.shift();
-//   return arr;
-// }
-// console.log(deleteFirstIndex([1, 'b', 6], [1,5,7]));
-// v1
-// function deleteFirstIndex() {
-//  for (let i = 0; i < arguments.length; i++) { arguments[i].shift() }
-//  return arguments;
-// }
-// v2
-//function deleteFirstIndex() {
-//    Array.prototype.forEach.call(arguments, arr => arr.shift());
-//    return arguments;
-//}
-//------------------------------------------------------------------------------
-//Write function which sort string in descending order
-var str = 'bcdaeflmjgkhi';
-
-// function sortAlphabet(str) {
-//   var strArr = str.split('');
-//   strArr = strArr.sort();
-//   strArr = strArr.reverse();
-//   return strArr.join('');
-// }
-
-// каждый из использованных методов, кроме join возвращает массив
-// к которому сразу же можно пременить метод
-
-function sortAlphabet(str) {
-  return str.split('').sort().reverse().join('');
-}
->>>>>>> e949f9b265cad45c94a2f12845781d3d256d8866
 
   console.log(sortAlphabet(str));
   //------------------------------------------------------------------------------
@@ -110,15 +70,6 @@ function sortAlphabet(str) {
   //Write function which create double array.
   var arr1 = ['one', 2, 'three', 4];
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  function plusArray(arr1) {
-    var arr2 = arr1;
-    return arr2.concat(arr1);
-  }
-=======
->>>>>>> 5360ecf45d709282affa1697ff9fe7b0123d75f4
 // можно использовать один массив для помещения в него его же ;)
 // или создать новый (если исходный менять нельзя)
 // function plusArray(arr1) {
@@ -131,10 +82,7 @@ function plusArray(arr1) {
 //   var arr2 = arr1;
 //   return arr2.concat(arr1);
 // }
-<<<<<<< HEAD
-=======
->>>>>>> e949f9b265cad45c94a2f12845781d3d256d8866
->>>>>>> 5360ecf45d709282affa1697ff9fe7b0123d75f4
+
 
   console.log(plusArray(arr1));
   //------------------------------------------------------------------------------
@@ -175,51 +123,17 @@ function plusArray(arr1) {
 
   var const = [1, 'two', 17, -1, 'js'];
 
-<<<<<<< HEAD
   function makeCopyArray(arr) {
     return arr.slice(0, arr.length);
   }
 
 <<<<<<< HEAD
-=======
-  console.log(makeCopyArray(arr));
-  //------------------------------------------------------------------------------
-  // var arr = [
-  //   {title: 'intel', info:{cores:2, cache:3}},
-  // 	{title: 'intel', info:{cores:1, cache:1}},
-  // 	{title: 'amd', info:{cores:4, cache:2}},
-  // 	{title: 'amd', info:{cores:6, cache:8}},
-  // ];
-  //
-  // function sortByCores(arr) {
-  //   arr.sort(function(a, b) {
-  //     return a.info.cores - b.info.cores;
-  // });
-  // return arr;
-  // }
-  //
-  // console.log(sortByCores(arr));
-
-function argunetsTest() {
-  var array = Array.prototype.slice.call(1, arguments) {
-    array.forEach()
-  };
-=======
->>>>>>> 5360ecf45d709282affa1697ff9fe7b0123d75f4
 function makeCopyArraySlice(arr) {
    return arr.slice(0, arr.length);
 >>>>>>> e949f9b265cad45c94a2f12845781d3d256d8866
 }
 console.log(makeCopyArraySlice(arr));
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-console.log(argunetsTest());
-
-  //
-=======
->>>>>>> 5360ecf45d709282affa1697ff9fe7b0123d75f4
 function makeCopyArrayConcat(arr) {
   return arr.concat()
 }
@@ -241,4 +155,3 @@ return arr;
 
 console.log(sortByCores(arr));
 //
->>>>>>> e949f9b265cad45c94a2f12845781d3d256d8866
