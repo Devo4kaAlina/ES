@@ -64,9 +64,8 @@ function arrayClone(array) {
 
 console.log(arrayClone(array));
 //------------------------------------------------------------------------------
-function functionName() {
+// Write function which  
 
-}
 
 
 //
