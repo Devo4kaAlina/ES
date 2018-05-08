@@ -64,7 +64,16 @@ function arrayClone(array) {
 
 console.log(arrayClone(array));
 //------------------------------------------------------------------------------
-// Write function which  
+// Write function precessString which take string and hendler and return result respectivly hendler.
+
+function processString(string, handler) {
+
+
+
+}
+
+
+
 
 
 
