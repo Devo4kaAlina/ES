@@ -68,11 +68,9 @@ console.log(arrayClone(array));
 
 function processString(string, handler) {
 
-
-
 }
 
-
+console.log(processString());
 
 
 
