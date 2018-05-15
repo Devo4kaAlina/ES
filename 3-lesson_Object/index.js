@@ -66,11 +66,7 @@ console.log(arrayClone(array));
 //------------------------------------------------------------------------------
 // Write function precessString which take string and hendler and return result respectivly hendler.
 
-function processString(string, handler) {
 
-}
-
-console.log(processString());
 
 
 
