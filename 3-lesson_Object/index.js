@@ -68,24 +68,33 @@ console.log(arrayClone(array));
 
 var obj = {
     firtsLetter: function(str) {
-      return str.charAt(0);
-    }
-    lastLetter: function(str){
-      return str.charAt(str.length - 1);
-    }
-    info: function(str){
+      return str.charAt(0)
+    },
+    lastLetter: function(str) {
+      return str.charAt(str.length - 1)
+    },
+    info: function(str) {
       return {
-        length: str.length, spacesLessSize: str.indexOf(' ');
+        length: str.length,
+        spacesLessSize: str.indexOf(' ')
       }
-    }
-    reverseString: function(str){
-      return str.split('').reverse().join('');
-    }
+    },
+    reverseString: function(str) {
+      return str.split('').reverse().join('')
+    },
+  nonMethod: function(str) {
+    return str.toUpperCase()
+  }
+};
 
+function processString(string, met) {
+  return met ? obj[met](string) : obj.nonMethod(string);
 }
 
-
-
-
+console.log('firtsLetter = ', processString('Hello', 'firtsLetter'))
+console.log('lastLetter = ', processString('Hello', 'lastLetter'))
+console.log('info = ', processString('Hello world', 'info'))
+console.log('reverseString = ', processString('Hello world', 'reverseString'))
+console.log('nonMethod = ', processString('Hello world'))
 
 //
