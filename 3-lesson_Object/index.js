@@ -87,8 +87,8 @@ var obj = {
   }
 };
 
-function processString(string, met) {
-  return met ? obj[met](string) : obj.nonMethod(string);
+function processString(string, handler) {
+  return handler ? obj[handler](string) : obj.nonMethod(string);
 }
 
 console.log('firtsLetter = ', processString('Hello', 'firtsLetter'))
