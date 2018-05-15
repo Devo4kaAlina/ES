@@ -66,6 +66,23 @@ console.log(arrayClone(array));
 //------------------------------------------------------------------------------
 // Write function precessString which take string and hendler and return result respectivly hendler.
 
+var obj = {
+    firtsLetter: function(str) {
+      return str.charAt(0);
+    }
+    lastLetter: function(str){
+      return str.charAt(str.length - 1);
+    }
+    info: function(str){
+      return {
+        length: str.length, spacesLessSize: str.indexOf(' ');
+      }
+    }
+    reverseString: function(str){
+      return str.split('').reverse().join('');
+    }
+
+}
 
 
 
