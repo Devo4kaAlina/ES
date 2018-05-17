@@ -1,3 +1,4 @@
+'use strict';
 //1. Write function which check does object has property
 var obj = {
   name: "Sam",
@@ -98,6 +99,30 @@ console.log('reverseString = ', processString('Hello world', 'reverseString'))
 console.log('nonMethod = ', processString('Hello world'))
 //------------------------------------------------------------------------------
 //write object with fields name, age, lastname. Where name and lastname doesn't writeble but could be deleted.
+var info = {};
+
+Object.defineProperties(info,{
+  'name': {
+    value: 'Jhon',
+    writable: true,
+    configurable: false
+},
+  'lastName': {
+    value: 'Doe',
+    writable: true,
+    configurable: false
+    },
+   'age': {
+    value: 45,
+    writable: false,
+    configurable: false
+  }
+});
+
+console.log(info);
+//------------------------------------------------------------------------------
+//Write object which includ price and quantity of staff. Object must return price * quantity. 
+//For..in doesn't count
 
 
 
