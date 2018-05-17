@@ -121,8 +121,16 @@ Object.defineProperties(info,{
 
 console.log(info);
 //------------------------------------------------------------------------------
-//Write object which includ price and quantity of staff. Object must return price * quantity. 
+//Write object which includ price and amount of staff. Object must return price * amount. 
 //For..in doesn't count
+var staff = {price:5, amount: 14 };
+
+Object.defineProperty(staff, 'totalPrice',{
+  get: function () {return price * amount},
+  set: 
+
+
+})
 
 
 
