@@ -97,6 +97,9 @@ console.log('info = ', processString('Hello world', 'info'))
 console.log('reverseString = ', processString('Hello world', 'reverseString'))
 console.log('nonMethod = ', processString('Hello world'))
 //------------------------------------------------------------------------------
+//write object with fields name, age, lastname. Where name and lastname doesn't writeble but could be deleted.
+
+
 
 
 //
