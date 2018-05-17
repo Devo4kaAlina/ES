@@ -96,5 +96,7 @@ console.log('lastLetter = ', processString('Hello', 'lastLetter'))
 console.log('info = ', processString('Hello world', 'info'))
 console.log('reverseString = ', processString('Hello world', 'reverseString'))
 console.log('nonMethod = ', processString('Hello world'))
+//------------------------------------------------------------------------------
+
 
 //
