@@ -130,7 +130,7 @@ Object.defineProperty(staff, 'totalPrice',{
   set: 
 
 
-})
+});
 
 
 
