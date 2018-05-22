@@ -120,17 +120,31 @@ Object.defineProperties(info,{
 });
 
 console.log(info);
-//------------------------------------------------------------------------------
+//----------------------------------------u--------------------------------------
 //Write object which includ price and amount of staff. Object must return price * amount. 
 //For..in doesn't count
-var staff = {price:5, amount: 14 };
+var staff = {
+  price:5, 
+  amount: 14, 
+  toString: function () {
+    return this.price * this.amount
+  }
+};
 
-Object.defineProperty(staff, 'totalPrice',{
-  get: function () {return price * amount},
-  set: 
-
-
+Object.defineProperty( staff, 'toString', {
+  enumerable: false
 });
+
+
+console.log('price * amount = ' + staff.toString());
+//-----------------------------------------------------------------------------------
+// Write function which take object and array with properties and chenge properties of the objects elements 
+//which specefied in array 
+  
+
+
+  
+
 
 
 
