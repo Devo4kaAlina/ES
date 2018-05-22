@@ -140,10 +140,23 @@ console.log('price * amount = ' + staff.toString());
 //-----------------------------------------------------------------------------------
 // Write function which take object and array with properties and chenge properties of the objects elements 
 //which specefied in array 
+var price = {a: 1, b: 2};  
+
+function propertiesObject(obj, propArr) {
+  var props = {};
+  for (var i = 0; i < propArr.length; i++) {
+  props[propArr[i]] = true;
+}
+
+for (var key in obj) {
+  Object.defineProperty(obj, key, props);
+}
+  return obj;
+}
   
+console.log(propertiesObject(price, ['writable', 'configurable']));
 
 
-  
 
 
 
