@@ -14,78 +14,61 @@ console.log(doubleArray(arr1));
 //Write function wich get last element of array
 var arr = [1, 4, 6, 7, 8, 4];
 
-function getLastElememt(arr) {
-  return arr[arr.length - 1];
-}
-console.log(getLastElememt(arr));
-//------------------------------------------------------------------------------
-//Write function which fill array from 0 to num
-function createArr(num) {
-  var arr = [];
-  for (var i = 0; i < num + 1; i++) {
-    arr.push(i)
+  function getLastElememt(arr) {
+    return arr[arr.length - 1];
   }
-  return arr;
-}
-console.log(createArr(10));
-//------------------------------------------------------------------------------
-//Write function which delete first element from quanty arrays
-// function deleteFirstIndex(arr,arr1) {
-//   arr.shift();
-//   return arr;
-// }
-// console.log(deleteFirstIndex([1, 'b', 6], [1,5,7]));
-// v1
-// function deleteFirstIndex() {
-//  for (let i = 0; i < arguments.length; i++) { arguments[i].shift() }
-//  return arguments;
-// }
-// v2
-//function deleteFirstIndex() {
-//    Array.prototype.forEach.call(arguments, arr => arr.shift()); 
-//    return arguments;
-//}
-//------------------------------------------------------------------------------
-//Write function which sort string in descending order
-var str = 'bcdaeflmjgkhi';
+  console.log(getLastElememt(arr));
+  //------------------------------------------------------------------------------
+  //Write function which fill array from 0 to num
+  function createArr(num) {
+    var arr = [];
+    for (var i = 0; i < num + 1; i++) {
+      arr.push(i)
+    }
+    return arr;
+  }
+  console.log(createArr(10));
+  //------------------------------------------------------------------------------
+  //Write function which delete first element from quanty arrays
+  function deleteFirstIndex(arr,arr1) {
+    arr.shift();
+    return arr;
+  }
+  console.log(deleteFirstIndex([1, 'b', 6], [1,5,7]));
+  //------------------------------------------------------------------------------
+  //Write function which sort string in descending order
+  var str = 'bcdaeflmjgkhi';
 
-// function sortAlphabet(str) {
-//   var strArr = str.split('');
-//   strArr = strArr.sort();
-//   strArr = strArr.reverse();
-//   return strArr.join('');
-// }
+  function sortAlphabet(str) {
+    var strArr = str.split('');
+    strArr = strArr.sort();
+    trArr = strArr.reverse();
+    return strArr.join('');
+  }
 
-// каждый из использованных методов, кроме join возвращает массив
-// к которому сразу же можно пременить метод
+  console.log(sortAlphabet(str));
+  //------------------------------------------------------------------------------
+  //Write function which sort array in descending order
+  var arr = [2, 4, 7, 1, -2, 10, -9];
 
-function sortAlphabet(str) {
-  return str.split('').sort().reverse().join('');
-}
+  function descendingOrderSort(arr) {
+    return arr.sort(function(a, b) {
+      return b - a;
+    })
+  }
+  console.log(descendingOrderSort(arr));
+  //------------------------------------------------------------------------------
+  //Write function which delete certein elements
+  var arr = ['a', 'b', 'd', 'e', 'f'];
 
-console.log(sortAlphabet(str));
-//------------------------------------------------------------------------------
-//Write function which sort array in descending order
-var arr = [2, 4, 7, 1, -2, 10, -9];
+  function getNewArray(arr, start, end) {
+    return arr.slice(start, end);
+  }
 
-function descendingOrderSort(arr) {
-  return arr.sort(function(a, b) {
-    return b - a;
-  })
-}
-console.log(descendingOrderSort(arr));
-//------------------------------------------------------------------------------
-//Write function which delete certein elements
-var arr = ['a', 'b', 'd', 'e', 'f'];
-
-function getNewArray(arr, start, end) {
-  return arr.slice(start, end);
-}
-
-console.log(getNewArray(arr, 1, 4));
-//------------------------------------------------------------------------------
-//Write function which create double array.
-var arr1 = ['one', 2, 'three', 4];
+  console.log(getNewArray(arr, 1, 4));
+  //------------------------------------------------------------------------------
+  //Write function which create double array.
+  var arr1 = ['one', 2, 'three', 4];
 
 // можно использовать один массив для помещения в него его же ;)
 // или создать новый (если исходный менять нельзя)
@@ -100,50 +83,61 @@ function plusArray(arr1) {
 //   return arr2.concat(arr1);
 // }
 
-console.log(plusArray(arr1));
-//------------------------------------------------------------------------------
-// Exercise 5,6 together
-var arr = [1, 2, 3, 4, 5];
 
-function deleteIndex(arr) {
-  arr.splice(2, 2, 'three', 'four');
-  return arr;
-}
+  console.log(plusArray(arr1));
+  //------------------------------------------------------------------------------
+  // Exercise 5,6 together
+  var arr = [1, 2, 3, 4, 5];
 
-console.log(deleteIndex(arr));
-//------------------------------------------------------------------------------
-var arr = ['i', 'am', 'an', 'array'];
+  function deleteIndex(arr) {
+    arr.splice(2, 2, 'three', 'four');
+    return arr;
+  }
 
-function addElement(arr) {
-  arr.splice(3, 0, "awsome");
-  return arr;
-}
+  console.log(deleteIndex(arr));
+  //------------------------------------------------------------------------------
+  var arr = ['i', 'am', 'an', 'array'];
 
-console.log(addElement(arr));
-//------------------------------------------------------------------------------
-var arr = [
-  [14, 45],
-  [2, 'a', 'sort'],
-  ['something']
-];
+  function addElement(arr) {
+    arr.splice(3, 0, "awsome");
+    return arr;
+  }
 
-function sortArraysLenght(array) {
-  array.sort(function(a, b) {
-    return a.length - b.length;
-  })
-  return arr;
-}
+  console.log(addElement(arr));
+  //------------------------------------------------------------------------------
+  var arr = [
+    [14, 45],
+    [2, 'a', 'sort'],
+    ['something']
+  ];
 
-console.log(sortArraysLenght(arr));
-//------------------------------------------------------------------------------
+  function sortArraysLenght(array) {
+    array.sort(function(a, b) {
+      return a.length - b.length;
+    })
+    return arr;
+  }
 
-var arr = [1,'two', 17, -1, 'js'];
+  console.log(sortArraysLenght(arr));
+  //------------------------------------------------------------------------------
 
-function makeCopyArray(arr) {
+  var const = [1, 'two', 17, -1, 'js'];
+
+  function makeCopyArray(arr) {
+    return arr.slice(0, arr.length);
+  }
+
+<<<<<<< HEAD
+function makeCopyArraySlice(arr) {
    return arr.slice(0, arr.length);
+>>>>>>> e949f9b265cad45c94a2f12845781d3d256d8866
+}
+console.log(makeCopyArraySlice(arr));
+
+function makeCopyArrayConcat(arr) {
+  return arr.concat()
 }
 
-console.log(makeCopyArray(arr));
 //------------------------------------------------------------------------------
 var arr = [
   {title: 'intel', info:{cores:2, cache:3}},
@@ -160,4 +154,4 @@ return arr;
 }
 
 console.log(sortByCores(arr));
-
+//
