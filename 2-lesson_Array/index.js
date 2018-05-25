@@ -20,6 +20,9 @@ var arr = [1, 4, 6, 7, 8, 4];
   console.log(getLastElememt(arr));
   //------------------------------------------------------------------------------
   //Write function which fill array from 0 to num
+  /**
+   * Not bad! But... when I run function with some parameters (in our case is 10 -- createArr(10)) I expect get array with length = 10
+   */
   function createArr(num) {
     var arr = [];
     for (var i = 0; i < num + 1; i++) {
@@ -30,13 +33,28 @@ var arr = [1, 4, 6, 7, 8, 4];
   console.log(createArr(10));
   //------------------------------------------------------------------------------
   //Write function which delete first element from quanty arrays
-  function deleteFirstIndex(arr,arr1) {
+  /**
+   * Where is my second array without first element? I expected to see [1, 'b', 6], [1,5,7] ---> [['b', 6], [5,7]]
+   * */
+  function deleteFirstIndex(arr, arr1) {
     arr.shift();
     return arr;
   }
   console.log(deleteFirstIndex([1, 'b', 6], [1,5,7]));
   //------------------------------------------------------------------------------
   //Write function which sort string in descending order
+  /**
+   * Shortcut version without create a lot variables
+   * each method, except 'join', returns array
+   * */
+
+  function sortAlphabet_v2(str) {
+      return str
+          .split('')
+          .sort()
+          .reverse()
+          .join('');
+  }
   var str = 'bcdaeflmjgkhi';
 
   function sortAlphabet(str) {
@@ -47,6 +65,7 @@ var arr = [1, 4, 6, 7, 8, 4];
   }
 
   console.log(sortAlphabet(str));
+  console.log(sortAlphabet_v2(str));
   //------------------------------------------------------------------------------
   //Write function which sort array in descending order
   var arr = [2, 4, 7, 1, -2, 10, -9];
@@ -76,7 +95,7 @@ var arr = [1, 4, 6, 7, 8, 4];
 //   return arr1.concat(arr1);
 // }
 function plusArray(arr1) {
-  return [].concat(arr1, arr1);
+  return [].concat(arr1, arr1); // ты же моя умница ;) <-----------------------------------------------------------------
 }
 // function plusArray(arr1) {
 //   var arr2 = arr1;
@@ -115,22 +134,21 @@ function plusArray(arr1) {
     array.sort(function(a, b) {
       return a.length - b.length;
     })
-    return arr;
+    return arr;                         // упс! :) в данном примере это не страшно, но следи за тем, что ты возвращаешь
+                                        // и обьясни как это сработало :) ты сортировал array, a вернул arr
   }
 
   console.log(sortArraysLenght(arr));
   //------------------------------------------------------------------------------
 
-  var const = [1, 'two', 17, -1, 'js'];
+  var arr  = [1, 'two', 17, -1, 'js'];
 
   function makeCopyArray(arr) {
     return arr.slice(0, arr.length);
   }
 
-<<<<<<< HEAD
 function makeCopyArraySlice(arr) {
    return arr.slice(0, arr.length);
->>>>>>> e949f9b265cad45c94a2f12845781d3d256d8866
 }
 console.log(makeCopyArraySlice(arr));
 
