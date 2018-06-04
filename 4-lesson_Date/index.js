@@ -17,8 +17,8 @@ var stringDate = '01.02.2018';
 function dateFromString(stringDate) {
   var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
   var year = stringDate.substr(length - 4, 4),
-    month = stringDate.substr(3, 2),
-    day = stringDate.substr(0, 2);
+      month = stringDate.substr(3, 2),
+      day = stringDate.substr(0, 2);
 
   var formatData = (+year + '.' + month + '.' + day);
 
@@ -31,10 +31,11 @@ console.log(dateFromString(stringDate));
 //for today
 
 
-function weeksAfter(date) {
+function weeksAfter() {
+  var week = Math.floor((new Date() - new Date(2010, 0, 1))/604800000);
 
-return 
+  return week;
 
 }
-
 console.log(weeksAfter());
+//
