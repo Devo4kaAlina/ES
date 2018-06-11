@@ -2,10 +2,10 @@
 function firstDayOfTheYear(date) {
   var days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
 
-  return days[date.getDate()];
+  return days[date.getDate()]; // getDay, а не getDate возвращает день. Так у тебя все время будет 1
 }
 
-var date = new Date(2018, 0, 1); // getDay, а не getDate возвращает день. Так у тебя все время будет 1
+var date = new Date(2018, 0, 1);
 
 console.log(firstDayOfTheYear(date));
 // -----------------------------------------------------------------------------
