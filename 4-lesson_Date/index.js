@@ -1,41 +1,35 @@
-//Write function which return day of week for predetermined date
-function firstDayOfTheYear(date) {
-var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
 
-return days[date.getDate()];
+//не знаю почему в (year || 2018, 0, 1) без || 2018, 0, 1 не работает
+//Добавил проверку
+function firstDayOfTheYear(year) {
+  if (typeof year != 'number') {
+    return false;
+  }
+  var date = new Date(year || 2018, 0, 1);
+  var days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+  return days[date.getDay()];
 }
+console.log(firstDayOfTheYear());
 
-var date = new Date(2018, 0, 1);
-
-
-
-console.log(firstDayOfTheYear(date));
 //------------------------------------------------------------------------------
 //Write function which take date in string format and return day of week
 var stringDate = '01.02.2018';
-
 function dateFromString(stringDate) {
   var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
-  var year = stringDate.substr(length - 4, 4),
-      month = stringDate.substr(3, 2),
-      day = stringDate.substr(0, 2);
-
-  var formatData = (+year + '.' + month + '.' + day);
-
+  var formatData = stringDate
+    .split('.')
+    .reverse()
+    .join('.');
   return days[new Date(formatData).getDate()];
 }
-
 console.log(dateFromString(stringDate));
 //------------------------------------------------------------------------------
 //Write function which return how many weeks passed from established date
 //for today
-
-
 function weeksAfter() {
-  var week = Math.floor((new Date() - new Date(2010, 0, 1))/604800000);
-
+var week = Math.floor(
+    (new Date() - new Date(2010, 0, 1)) / (24 * 60 * 60 * 1000 * 7)
+  );
   return week;
-
 }
 console.log(weeksAfter());
-//
