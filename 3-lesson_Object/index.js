@@ -45,17 +45,19 @@ function keysNumbers(obj) {
 }
 
 console.log(keysNumbers(obj));
+console.log('------> array', Object.keys(obj)); // return array of keys
+console.log('------> length', Object.keys(obj).length); // length of object keys
 //------------------------------------------------------------------------------
 //4. Write function which return deep clone array
-let array = [1, 2, 'three', {
+let originArray = [1, 2, 'three', {
     price: 28
   }, {
     display: 'block',
     color: 'red'
   }],
-  clonearr = {};
+  clonearr = {}; // Why is it object?
 
-function arrayClone(array) {
+function arrayClone(array) {       // It is not deep clone :(
   for (var key in array) {
     clonearr[key] = array[key];
 
@@ -63,7 +65,16 @@ function arrayClone(array) {
   return clonearr;
 }
 
-console.log(arrayClone(array));
+let cloneOfArray = arrayClone(originArray);
+
+/**
+ * What if I change originArray?
+ * */
+
+originArray[3].price = 100500;
+console.log('------> Show me cloneOfArray 4 element ', cloneOfArray[3]);
+
+
 //------------------------------------------------------------------------------
 // Write function precessString which take string and hendler and return result respectivly hendler.
 
@@ -83,13 +94,16 @@ var obj = {
     reverseString: function(str) {
       return str.split('').reverse().join('')
     },
-  nonMethod: function(str) {
-    return str.toUpperCase()
-  }
+    nonMethod: function(str) {
+      return str.toUpperCase()
+    }
 };
 
 function processString(string, handler) {
-  return handler ? obj[handler](string) : obj.nonMethod(string);
+  // It every ease broke :(
+  // if handler is 'blablabla' string, obj[handler] will be undefined and obj[handler](string) throw Error
+  return handler && obj[handler] ? obj[handler](string) : obj.nonMethod(string);
+  //return handler ? obj[handler](string) : obj.nonMethod(string);
 }
 
 console.log('firtsLetter = ', processString('Hello', 'firtsLetter'))
