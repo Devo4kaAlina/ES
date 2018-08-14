@@ -28,20 +28,6 @@ var rectangle = {
   }
 }
 console.log(rectangle.getSquare());
-//v.2---------------------------------------------------------------------------
-//Не могу реализовать через фнкцию, чтобы вводить параметры для прямоугольника
-//в аргументы фнкции
-// function getSquare(param1, param2) {
-//   var rectangle = {
-//     height: param1,
-//     width: param2
-//   };
-//    return function getElemSquare(){
-//      return this.height * this.height;
-//    }
-//    console.log(rectangle.getElemSquare);
-// }
-// console.log(getSquare(5, 15));
 //------------------------------------------------------------------------------
 //Task 2
 var things ={
